@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance - Gym Management System</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>Gym Management System</h1>
+    </header>
+
+    <nav>
+        <a href="index.html">Dashboard</a>
+        <a href="members.html">Members</a>
+        <a href="plans.html">Membership Plans</a>
+        <a href="trainers.html">Trainers</a>
+        <a href="attendance.html">Attendance</a>
+        <a href="payments.html">Payments</a>
+    </nav>
+
+    <main>
+
+        <h2>Attendance Management</h2>
+
+        <!-- Attendance Form -->
+        <section class="form-section">
+
+            <h3>Record Attendance</h3>
+
+            <form id="attendanceForm">
+
+                <input type="hidden" id="attendance_id">
+
+                <select id="member_id" required>
+                    <option value="">Select Member</option>
+                </select>
+
+                <input
+                    type="date"
+                    id="attendance_date"
+                    required
+                >
+
+                <input
+                    type="time"
+                    id="check_in_time"
+                    required
+                >
+
+                <input
+                    type="time"
+                    id="check_out_time"
+                >
+
+                <button type="submit">
+                    Save Attendance
+                </button>
+
+                <button type="button" id="cancelBtn">
+                    Cancel
+                </button>
+
+            </form>
+
+        </section>
+
+        <!-- Search -->
+        <section class="search-section">
+
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Search by member name..."
+            >
+
+        </section>
+
+        <!-- Attendance Table -->
+        <section>
+
+            <table>
+
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Member</th>
+                        <th>Date</th>
+                        <th>Check In</th>
+                        <th>Check Out</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+
+                <tbody id="attendanceTableBody">
+                    <!-- Attendance records will be loaded here -->
+                </tbody>
+
+            </table>
+
+        </section>
+
+    </main>
+
+    <script src="js/attendance.js"></script>
+
+</body>
+</html>
